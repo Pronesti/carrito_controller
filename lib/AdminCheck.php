@@ -1,7 +1,7 @@
 <?php
 namespace Library;
 
-class CheckLogin implements \Library\Controller{
+class AdminCheck implements \Library\Controller{
     private $pagina;
     public function __construct($pagina)
     {
@@ -11,14 +11,14 @@ class CheckLogin implements \Library\Controller{
         if($session['username'] == 'Admin'){
             return $this->pagina->get($get,$post,$session);
         }else{
-            header("Location: index.php?page=login");
+            header("Location: index.php");
         }
     }
     public function post($get,$post,&$session){
         if($session['username'] == 'Admin'){
             return $this->pagina->post($get,$post,$session);
         }else{
-            header("Location: index.php?page=login");
+            header("Location: index.php");
         }
     }
     

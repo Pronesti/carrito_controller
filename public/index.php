@@ -6,6 +6,7 @@ $which = $_GET['page'];
 $router = new Library\Router();
 $router->addRoute("carrito", new Library\CheckLogin(new Carrito\Paginas\verCarrito()));
 $router->addRoute("listado", new Library\CheckLogin(new Carrito\Paginas\verListadoProductos()));
+$router->addRoute("admin", new Library\AdminCheck(new Carrito\Paginas\verListadoProductos()));
 $router->addRoute("register", new Carrito\Paginas\verRegistro());
 $router->addRoute("login", new Carrito\Paginas\verLogin());
 
